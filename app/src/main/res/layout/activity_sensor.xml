@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LnrLayout"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="com.odev.odevUygulamalari.SensorActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_SensorDegeri"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Deger"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/textView21"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="İVME DEGERİ:"
+                android:textColor="@color/cardview_shadow_start_color"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/txt_ivme"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="ivme" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="SENSOR lİSTESİ"
+                android:textColor="@color/cardview_shadow_start_color"
+                android:textStyle="bold|italic" />
+
+            <TextView
+                android:id="@+id/txt_SensorListesi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Sensor Listesi" />
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
