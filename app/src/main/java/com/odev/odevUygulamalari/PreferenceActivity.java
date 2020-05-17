@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
@@ -28,12 +30,16 @@ public class PreferenceActivity extends AppCompatActivity {
     public static final String Weight = "weightKey2";
     public static final String Height = "heightKey2";
     public static final String ApplicationMode = "applicationKey";
+    LinearLayout linearLayout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_preference);
         sharedpreferences =getSharedPreferences(MyPREFERENCES, Context.MODE_PRIVATE);
+        linearLayout=(LinearLayout)findViewById(R.id.LinearRenk);
+
+
 
         // Ekrandaki objeleri yakalıyoruz.
         EditText userName=(EditText)findViewById(R.id.txtUserName);
@@ -49,7 +55,7 @@ public class PreferenceActivity extends AppCompatActivity {
 
         // Dropdown'a değerleri dolduruyoruz.
        //dropdown = findViewById(R.id.spinner1);
-        String[] color = new String[]{"Light", "Dark", "Blue"};
+        String[] color = new String[]{"Light", "Blue"};
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_dropdown_item, color);
         dropdown.setAdapter(adapter);
 
@@ -63,6 +69,17 @@ public class PreferenceActivity extends AppCompatActivity {
         // Application Mode
         String applicationMode = sharedpreferences.getString(name+ApplicationMode, "0");
         dropdown.setSelection(getArrayItemIndex(color, applicationMode));
+
+        //Moda gore arka plan rengi değistirme
+        if (applicationMode.equals("Light")){
+            linearLayout.setBackgroundColor(Color.WHITE);
+
+        }
+        if (applicationMode.equals("Blue")){
+            linearLayout.setBackgroundColor(Color.BLUE);
+
+        }
+
 
         // Gender
         String genderMode=sharedpreferences.getString(name+Gender,"Female");
